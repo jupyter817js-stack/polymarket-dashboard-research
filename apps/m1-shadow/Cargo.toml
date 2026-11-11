@@ -1,0 +1,26 @@
+[package]
+name        = "rn1-m1-shadow"
+version     = "0.1.0"
+edition.workspace = true
+authors.workspace = true
+license.workspace = true
+
+[[bin]]
+name = "rn1-m1-shadow"
+path = "src/main.rs"
+
+[dependencies]
+rn1-core     = { path = "../../crates/core" }
+rn1-db       = { path = "../../crates/db" }
+rn1-data-api = { path = "../../crates/data-api-client" }
+
+tokio              = { workspace = true }
+serde              = { workspace = true }
+serde_json         = { workspace = true }
+chrono             = { workspace = true }
+anyhow             = { workspace = true }
+tracing            = { workspace = true }
+tracing-subscriber = { workspace = true }
+dotenvy            = { workspace = true }
+clap               = { workspace = true }
+sqlx               = { workspace = true }

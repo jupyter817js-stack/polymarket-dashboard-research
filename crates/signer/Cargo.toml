@@ -1,0 +1,21 @@
+[package]
+name              = "rn1-signer"
+version           = "0.1.0"
+edition.workspace = true
+authors.workspace = true
+license.workspace = true
+description       = "Polymarket EIP-712 + EIP-1271 order signing and L1/L2 auth helpers."
+
+[dependencies]
+alloy-primitives   = "0.8"
+alloy-signer       = "0.8"
+alloy-signer-local = "0.8"
+alloy-sol-types    = "0.8"
+hmac               = "0.12"
+sha2               = "0.10"
+hex                = { workspace = true }
+base64             = "0.22"
+chrono             = { workspace = true }
+rand               = "0.8"
+anyhow             = { workspace = true }
+tracing            = { workspace = true }

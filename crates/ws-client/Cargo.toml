@@ -1,0 +1,18 @@
+[package]
+name        = "rn1-ws"
+version     = "0.1.0"
+edition.workspace = true
+authors.workspace = true
+license.workspace = true
+
+[dependencies]
+rn1-core         = { path = "../core" }
+tokio            = { workspace = true }
+tokio-tungstenite = { workspace = true }
+futures          = { workspace = true }
+serde            = { workspace = true }
+serde_json       = { workspace = true }
+chrono           = { workspace = true }
+tracing          = { workspace = true }
+anyhow           = { workspace = true }
+url              = { workspace = true }

@@ -1,0 +1,37 @@
+[package]
+name              = "rn1-trader"
+version           = "0.1.0"
+edition.workspace = true
+authors.workspace = true
+license.workspace = true
+description       = "Event-driven Polymarket pair-completion trader (port of rn1-live)."
+
+[[bin]]
+name = "rn1-trader"
+path = "src/main.rs"
+
+[dependencies]
+rn1-core         = { path = "../../crates/core" }
+rn1-db           = { path = "../../crates/db" }
+rn1-clob         = { path = "../../crates/clob-client" }
+rn1-ws           = { path = "../../crates/ws-client" }
+rn1-planner      = { path = "../../crates/planner" }
+rn1-signer       = { path = "../../crates/signer" }
+rn1-data-api     = { path = "../../crates/data-api-client" }
+
+tokio            = { workspace = true }
+futures          = { workspace = true }
+async-trait      = { workspace = true }
+reqwest          = { workspace = true }
+serde            = { workspace = true }
+serde_json       = { workspace = true }
+sqlx             = { workspace = true }
+chrono           = { workspace = true }
+anyhow           = { workspace = true }
+thiserror        = { workspace = true }
+tracing          = { workspace = true }
+tracing-subscriber = { workspace = true }
+dotenvy          = { workspace = true }
+clap             = { workspace = true }
+hex              = { workspace = true }
+alloy-primitives = "0.8"

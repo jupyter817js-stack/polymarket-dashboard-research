@@ -1,0 +1,11 @@
+-- fills.is_maker 추론 결과의 출처(provenance) 기록.
+-- is_maker 컬럼은 0001_init 에 이미 존재 (BOOLEAN, NULL = 미분류).
+-- Polymarket /activity 는 maker/taker 를 안 주므로 관측 fill 은 추론이 필요함.
+--
+-- maker_method 값:
+--   'last_trade' — WS last_trade_price 의 aggressor side 를 tx_hash+asset 로 매칭 (고신뢰).
+--                  RN1 은 BUY-only → taker=SELL 이면 RN1 maker, taker=BUY 이면 RN1 taker.
+--   'book'       — fill 직전 order book best_bid 대비 추론 (중신뢰).
+--                  price <= best_bid → maker, 초과 → taker.
+--   NULL         — 신호 없음 (미분류).
+ALTER TABLE fills ADD COLUMN IF NOT EXISTS maker_method TEXT;

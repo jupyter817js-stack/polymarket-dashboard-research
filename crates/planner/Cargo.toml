@@ -1,0 +1,11 @@
+[package]
+name              = "rn1-planner"
+version           = "0.1.0"
+edition.workspace = true
+authors.workspace = true
+license.workspace = true
+description       = "Pure pair-completion decision core (lifted from rn1-live)."
+
+[dependencies]
+serde      = { workspace = true }
+serde_json = { workspace = true }
